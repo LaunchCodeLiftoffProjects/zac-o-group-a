@@ -15,7 +15,6 @@ public class Event extends AbstractEntity {
     @Size(max = 500, message = "Description too long!")
     private String description;
 
-
     private EventType type;
 
     public Event(String title, String description, EventType type) {
