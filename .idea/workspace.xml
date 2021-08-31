@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="71c6d5a3-6b13-41c1-930b-6a522040f9e1" name="Changes" comment="Models and Repositories added, not tested">
       <change afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" afterDir="false" />
@@ -18,6 +19,10 @@
       <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+=======
+    <list default="true" id="8ecd3f4b-e3bc-4089-b71a-59524d66f1d0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+>>>>>>> 0f717ecb5af547432b80fcb8466d062cd21b0fa0
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +42,7 @@
         </task>
         <projects_view>
           <tree_state>
+<<<<<<< HEAD
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -54,6 +60,9 @@
                 <item name="application" type="c8890929:TasksNode$1" />
               </path>
             </expand>
+=======
+            <expand />
+>>>>>>> 0f717ecb5af547432b80fcb8466d062cd21b0fa0
             <select />
           </tree_state>
         </projects_view>
@@ -93,6 +102,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1x9QTyrWH5OzigYxWg1na0VpAxt" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -108,7 +118,11 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.tools.jpab" />
   </component>
   <component name="RunManager">
+<<<<<<< HEAD
     <configuration name="zac-o-group-a [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+=======
+    <configuration name="OutdoorEvents [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+>>>>>>> 0f717ecb5af547432b80fcb8466d062cd21b0fa0
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -131,9 +145,13 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="Gradle.zac-o-group-a [bootRun]" />
         <item itemvalue="Gradle.zac-o-group-a [bootRun]" />
         <item itemvalue="Gradle.zac-o-group-a [bootRun]" />
+=======
+        <item itemvalue="Gradle.OutdoorEvents [bootRun]" />
+>>>>>>> 0f717ecb5af547432b80fcb8466d062cd21b0fa0
       </list>
     </recent_temporary>
   </component>
@@ -171,5 +189,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Models and Repositories added, not tested" />
     <option name="LAST_COMMIT_MESSAGE" value="Models and Repositories added, not tested" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/outdoorEvents$OutdoorEvents__bootRun_.ic" NAME="OutdoorEvents [bootRun] Coverage Results" MODIFIED="1629759793105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
