@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="71c6d5a3-6b13-41c1-930b-6a522040f9e1" name="Changes" comment="Models and Repositories added, not tested">
       <change afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" afterDir="false" />
@@ -24,6 +25,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
 >>>>>>> 0f717ecb5af547432b80fcb8466d062cd21b0fa0
     </list>
+=======
+    <list default="true" id="32bda122-d494-488f-b24e-fd883a315b96" name="Default Changelist" comment="Revert &quot;got the top nav bar working, was also able to fix delete page, but it still needs some work visually.&quot;&#10;&#10;This reverts commit 41d8b83e" />
+>>>>>>> view-bootstrap
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +47,9 @@
         <projects_view>
           <tree_state>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> view-bootstrap
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -59,16 +66,27 @@
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="application" type="c8890929:TasksNode$1" />
               </path>
+<<<<<<< HEAD
             </expand>
 =======
             <expand />
 >>>>>>> 0f717ecb5af547432b80fcb8466d062cd21b0fa0
+=======
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="outdoorEvents" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+>>>>>>> view-bootstrap
             <select />
           </tree_state>
         </projects_view>
       </state>
     </system>
   </component>
+<<<<<<< HEAD
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -102,6 +120,18 @@
     </option>
   </component>
   <component name="ProjectId" id="1x9QTyrWH5OzigYxWg1na0VpAxt" />
+=======
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="view-bootstrap" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="ProjectId" id="1xQ9eQbG433biUtG1jdkYbcKcGk" />
+>>>>>>> view-bootstrap
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -111,6 +141,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
@@ -123,6 +154,12 @@
 =======
     <configuration name="OutdoorEvents [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
 >>>>>>> 0f717ecb5af547432b80fcb8466d062cd21b0fa0
+=======
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="OutdoorEvents [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+>>>>>>> view-bootstrap
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -146,18 +183,23 @@
     <recent_temporary>
       <list>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <item itemvalue="Gradle.zac-o-group-a [bootRun]" />
         <item itemvalue="Gradle.zac-o-group-a [bootRun]" />
         <item itemvalue="Gradle.zac-o-group-a [bootRun]" />
 =======
         <item itemvalue="Gradle.OutdoorEvents [bootRun]" />
 >>>>>>> 0f717ecb5af547432b80fcb8466d062cd21b0fa0
+=======
+        <item itemvalue="Gradle.OutdoorEvents [bootRun]" />
+>>>>>>> view-bootstrap
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="71c6d5a3-6b13-41c1-930b-6a522040f9e1" name="Changes" comment="Models and Repositories added, not tested" />
       <created>1629764836218</created>
       <option name="number" value="Default" />
@@ -172,6 +214,14 @@
       <updated>1630001746927</updated>
     </task>
     <option name="localTasksCounter" value="2" />
+=======
+      <changelist id="722ec3e7-7e58-45a8-adba-2f9997cbeca5" name="Default Changelist" comment="" />
+      <created>1630276772975</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1630276772975</updated>
+    </task>
+>>>>>>> view-bootstrap
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -179,7 +229,23 @@
       <map>
         <entry key="MAIN">
           <value>
+<<<<<<< HEAD
             <State />
+=======
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/view-bootstrap" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+>>>>>>> view-bootstrap
           </value>
         </entry>
       </map>
@@ -187,8 +253,13 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+<<<<<<< HEAD
     <MESSAGE value="Models and Repositories added, not tested" />
     <option name="LAST_COMMIT_MESSAGE" value="Models and Repositories added, not tested" />
+=======
+    <MESSAGE value="Revert &quot;got the top nav bar working, was also able to fix delete page, but it still needs some work visually.&quot;&#10;&#10;This reverts commit 41d8b83e" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;got the top nav bar working, was also able to fix delete page, but it still needs some work visually.&quot;&#10;&#10;This reverts commit 41d8b83e" />
+>>>>>>> view-bootstrap
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/outdoorEvents$OutdoorEvents__bootRun_.ic" NAME="OutdoorEvents [bootRun] Coverage Results" MODIFIED="1629759793105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
