@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32bda122-d494-488f-b24e-fd883a315b96" name="Default Changelist" comment="" />
+    <list default="true" id="32bda122-d494-488f-b24e-fd883a315b96" name="Default Changelist" comment="Revert &quot;got the top nav bar working, was also able to fix delete page, but it still needs some work visually.&quot;&#10;&#10;This reverts commit 41d8b83e" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,6 +59,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="ProjectId" id="1xQ9eQbG433biUtG1jdkYbcKcGk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -134,6 +135,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Revert &quot;got the top nav bar working, was also able to fix delete page, but it still needs some work visually.&quot;&#10;&#10;This reverts commit 41d8b83e" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;got the top nav bar working, was also able to fix delete page, but it still needs some work visually.&quot;&#10;&#10;This reverts commit 41d8b83e" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/outdoorEvents$OutdoorEvents__bootRun_.ic" NAME="OutdoorEvents [bootRun] Coverage Results" MODIFIED="1629759793105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
