@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/">
-<head th:replace="fragments :: head">
-</head>
+<head th:replace="fragments :: head"></head>
 <body>
 
-<div th:replace="fragments :: page-header"></div>
+<header th:replace="fragments :: header"></header>
+
+<!--<div th:replace="fragments :: page-header"></div>-->
 
 <div class="container body-content">
 
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
-    <form th:action="@{/search/results}" method = "post">
+    <form th:action="@{search/results}" method = "post">
         <h2>Search by:</h2>
 
         <p>
@@ -37,30 +38,27 @@
     <hr />
 
 
-<!--    <table class="job-listing">-->
-<!--        <tr th:each="job : ${jobs}">-->
-<!--            <td>-->
-<!--                <p>-->
-<!--                    Job Id:-->
-<!--                    <a th:href="@{'/view/' + ${job.id}}" th:text="${job.id}"></a>-->
-<!--                </p>-->
-<!--                <p th:text="${'Name: ' + job.name}"></p>-->
-<!--                <p>-->
-<!--                    Employer:-->
-<!--                    <a th:href="@{'/employers/view/' + ${job.employer.id}}" th:text="${job.employer.name}"></a>-->
-<!--                </p>-->
-<!--                <p>-->
-<!--                    Skills:-->
-<!--                <ul th:each="skill : ${job.skills}">-->
-<!--                    <li>-->
-<!--                        <a th:href="@{'/skills/view/' + ${skill.id}}" th:text="${skill.name}"></a>-->
-<!--                    </li>-->
-<!--                </ul>-->
-<!--                </p>-->
+    <table class="job-listing">
+        <tr th:each="event : ${events}">
+            <td>
+                <p>
+                    Event title:
+                    <a th:href="@{'/view/' + ${event.title}}" th:text="${event.title}"></a>
+                </p>
+                <p th:text="${'Name: ' + event.title}"></p>
+                <p>
+                    Event type:
+                    <a th:href="@{'/events/view/' + ${event.type}}" th:text="${event.type}"></a>
+                </p>
 
-<!--            </td>-->
-<!--        </tr>-->
-<!--    </table>-->
+                <p>
+                    Description:
+                    <a th:href="@{'/events/view/' + ${event.description}}" th:text="${event.title}"></a>
+                </p>
+
+            </td>
+        </tr>
+    </table>
 
 </div>
 
