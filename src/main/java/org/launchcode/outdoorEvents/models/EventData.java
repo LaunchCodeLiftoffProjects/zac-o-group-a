@@ -31,9 +31,9 @@ public class EventData {
 
     public static String getFieldValue(Event event, String fieldName){
         String theValue;
-        if (fieldName.equals("Title")){
+        if (fieldName.equals("name")){
             theValue = event.getTitle();
-        } else if (fieldName.equals("Type")){
+        } else if (fieldName.equals("Category")){
             theValue = event.getType().toString();
         } else {
             theValue = event.getDescription().toString();

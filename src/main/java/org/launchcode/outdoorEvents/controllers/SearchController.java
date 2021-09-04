@@ -46,6 +46,7 @@ public class SearchController {
             model.addAttribute("columns", columnChoices);
             model.addAttribute("title", "events with " + columnChoices.get(searchType) + ": " + searchTerm);
             model.addAttribute("events", events);
-            return "/search";
+            return "./events/search";
         }
 }
+//TODO fix return mapping.
