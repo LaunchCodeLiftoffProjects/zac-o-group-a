@@ -11,7 +11,7 @@
 
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
-    <form th:action="@{search/results}" method = "post">
+    <form th:action="@{/search/results}" method = "post">
         <h2>Search by:</h2>
 
         <p>
@@ -43,17 +43,20 @@
             <td>
                 <p>
                     Event title:
-                    <a th:href="@{'/view/' + ${event.title}}" th:text="${event.title}"></a>
+                    <a th:text="${event.title}"></a>
                 </p>
-                <p th:text="${'Name: ' + event.title}"></p>
+                <p th:text="${'User: ' + 'user here'}"></p>
                 <p>
                     Event type:
-                    <a th:href="@{'/events/view/' + ${event.type}}" th:text="${event.type}"></a>
+                    <a  th:text="${event.type}"></a>
                 </p>
-
+                <p>
+                    Location:
+                    <a  th:text="${'location data here'}"></a>
+                </p>
                 <p>
                     Description:
-                    <a th:href="@{'/events/view/' + ${event.description}}" th:text="${event.title}"></a>
+                    <a th:text="${event.description}"></a>
                 </p>
 
             </td>

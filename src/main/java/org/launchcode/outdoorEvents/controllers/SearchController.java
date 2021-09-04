@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 
 @Controller
-@RequestMapping("/events/search")
+@RequestMapping("search")
 public class SearchController {
 
         @Autowired
@@ -25,14 +25,16 @@ public class SearchController {
 
     public SearchController () {
         columnChoices.put("all", "All");
+        columnChoices.put("user", "User");
         columnChoices.put("events", "Events");
+        columnChoices.put("location", "Location");
         columnChoices.put("categories", "Categories");
     }
 
     @RequestMapping("")
     public String search(Model model) {
         model.addAttribute("columns", columnChoices);
-        return "events/search";
+        return "search";
     }
 
     @PostMapping("results")
@@ -46,7 +48,7 @@ public class SearchController {
             model.addAttribute("columns", columnChoices);
             model.addAttribute("title", "events with " + columnChoices.get(searchType) + ": " + searchTerm);
             model.addAttribute("events", events);
-            return "./events/search";
+            return "search";
         }
 }
 //TODO fix return mapping.
