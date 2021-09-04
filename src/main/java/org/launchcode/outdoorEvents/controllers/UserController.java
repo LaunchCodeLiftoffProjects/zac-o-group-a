@@ -1,13 +1,19 @@
 package org.launchcode.outdoorEvents.controllers;
 
+import org.launchcode.outdoorEvents.data.UserRepository;
 import org.launchcode.outdoorEvents.models.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("user")
 public class UserController {
+
+    @Autowired
+    private UserRepository userRepository;
 
     @GetMapping("add")
     public String displayAddUserForm() {
@@ -21,6 +27,7 @@ public class UserController {
         model.addAttribute("username", user.getUsername());
         //model.addAttribute("email", user.getEmail());
         if (user.getPassword().equals(verify)) {
+            userRepository.save(user);
             return "user/index";
         }
         else {

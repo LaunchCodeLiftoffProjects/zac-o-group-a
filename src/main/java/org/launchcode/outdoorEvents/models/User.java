@@ -1,21 +1,16 @@
 package org.launchcode.outdoorEvents.models;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import java.util.ArrayList;
 import java.util.List;
 
-@Controller
-@RequestMapping("user")
+@Entity
 public class User extends AbstractEntity{
 
     @NotBlank(message = "Please enter a username")
-    @Size(min = 6, max = 127)
+    @Size(min = 3, max = 127)
     private String username;
     @NotBlank(message = "Please enter a password")
     @Size(min = 6, max = 127)
@@ -26,6 +21,7 @@ public class User extends AbstractEntity{
 
     @OneToMany
     private List<Location> locations;
+
 
     public User(String username, String password, List<Event> events, List<Location> locations) {
         this.username = username;
@@ -38,6 +34,8 @@ public class User extends AbstractEntity{
         return password;
     }
 
+    public void setPassword(String password) { this.password = password;}
+
     public List<Event> getEvents() {
         return events;
     }
@@ -47,6 +45,9 @@ public class User extends AbstractEntity{
     }
 
     public String getUsername() {return username; }
+
+    public void setUsername(String username) { this.username = username;}
+
 
 
 }
