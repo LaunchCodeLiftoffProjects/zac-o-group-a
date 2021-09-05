@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
 <<<<<<< HEAD
+    <list default="true" id="4e77e242-ee34-419d-866d-5db6ad697331" name="Default Changelist" comment="" />
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
     <list default="true" id="32bda122-d494-488f-b24e-fd883a315b96" name="Default Changelist" comment="Revert &quot;got the top nav bar working, was also able to fix delete page, but it still needs some work visually.&quot;&#10;&#10;This reverts commit 41d8b83e" />
 =======
@@ -40,6 +43,7 @@
     <list default="true" id="32bda122-d494-488f-b24e-fd883a315b96" name="Default Changelist" comment="Revert &quot;got the top nav bar working, was also able to fix delete page, but it still needs some work visually.&quot;&#10;&#10;This reverts commit 41d8b83e" />
 >>>>>>> view-bootstrap
 >>>>>>> main
+>>>>>>> main
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,9 +65,12 @@
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> view-bootstrap
+>>>>>>> main
 >>>>>>> main
             <expand>
               <path>
@@ -81,6 +88,9 @@
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="application" type="c8890929:TasksNode$1" />
               </path>
+<<<<<<< HEAD
+            </expand>
+=======
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -101,6 +111,7 @@
 =======
 >>>>>>> view-bootstrap
 >>>>>>> main
+>>>>>>> main
             <select />
           </tree_state>
         </projects_view>
@@ -110,10 +121,18 @@
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> main
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+<<<<<<< HEAD
+      </list>
+    </option>
+  </component>
+=======
         <option value="Interface" />
       </list>
     </option>
@@ -160,10 +179,15 @@
 >>>>>>> view-bootstrap
 >>>>>>> main
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+>>>>>>> main
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
+  <component name="RunManager" selected="Gradle.OutdoorEvents [bootRun]">
+    <configuration name="OutdoorEvents [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+=======
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -193,6 +217,7 @@
 =======
 >>>>>>> view-bootstrap
 >>>>>>> main
+>>>>>>> main
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -214,49 +239,88 @@
       <method v="2" />
     </configuration>
 <<<<<<< HEAD
+    <configuration name="UserRepositoryTests.testCreateSecondUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+=======
+<<<<<<< HEAD
 =======
     <configuration name="zac-o-group-a [init]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+>>>>>>> main
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
+<<<<<<< HEAD
+        <option name="scriptParameters" value="--tests &quot;org.launchcode.outdoorEvents.UserRepositoryTests.testCreateSecondUser&quot;" />
+=======
         <option name="scriptParameters" />
+>>>>>>> main
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
+<<<<<<< HEAD
+            <option value=":test" />
+=======
             <option value="init" />
+>>>>>>> main
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+<<<<<<< HEAD
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+=======
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+>>>>>>> main
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+<<<<<<< HEAD
+    <configuration name="UserRepositoryTests.testCreateUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+=======
     <configuration name="zac-o-group-a [projects]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+>>>>>>> main
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
+<<<<<<< HEAD
+        <option name="scriptParameters" value="--tests &quot;org.launchcode.outdoorEvents.UserRepositoryTests.testCreateUser&quot;" />
+=======
         <option name="scriptParameters" />
+>>>>>>> main
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
+<<<<<<< HEAD
+            <option value=":test" />
+=======
             <option value="projects" />
+>>>>>>> main
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+<<<<<<< HEAD
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+=======
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+>>>>>>> main
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+<<<<<<< HEAD
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.OutdoorEvents [bootRun]" />
+        <item itemvalue="Gradle.UserRepositoryTests.testCreateSecondUser" />
+        <item itemvalue="Gradle.UserRepositoryTests.testCreateUser" />
+=======
     <configuration name="zac-o-group-a [wrapper]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -296,12 +360,21 @@
         <item itemvalue="Gradle.OutdoorEvents [bootRun]" />
 >>>>>>> view-bootstrap
 >>>>>>> main
+>>>>>>> main
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
+      <changelist id="4e77e242-ee34-419d-866d-5db6ad697331" name="Default Changelist" comment="" />
+      <created>1630861795916</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1630861795916</updated>
+    </task>
+=======
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -331,6 +404,7 @@
 =======
 >>>>>>> view-bootstrap
 >>>>>>> main
+>>>>>>> main
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -338,6 +412,9 @@
       <map>
         <entry key="MAIN">
           <value>
+<<<<<<< HEAD
+            <State />
+=======
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -361,12 +438,15 @@
 =======
 >>>>>>> view-bootstrap
 >>>>>>> main
+>>>>>>> main
           </value>
         </entry>
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+<<<<<<< HEAD
+=======
   <component name="VcsManagerConfiguration">
 <<<<<<< HEAD
     <MESSAGE value="Revert &quot;got the top nav bar working, was also able to fix delete page, but it still needs some work visually.&quot;&#10;&#10;This reverts commit 41d8b83e" />
@@ -384,4 +464,5 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/outdoorEvents$OutdoorEvents__bootRun_.ic" NAME="OutdoorEvents [bootRun] Coverage Results" MODIFIED="1629759793105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
+>>>>>>> main
 </project>
