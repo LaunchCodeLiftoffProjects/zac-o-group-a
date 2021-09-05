@@ -24,8 +24,7 @@ public class UserController {
     public String processAddUserForm(Model model, @ModelAttribute User user, String verify) {
         model.addAttribute("user", user);
         model.addAttribute("verify", verify);
-        model.addAttribute("username", user.getUsername());
-        //model.addAttribute("email", user.getEmail());
+        //model.addAttribute("username", user.getUsername());
         if (user.getPassword().equals(verify)) {
             userRepository.save(user);
             return "user/index";
