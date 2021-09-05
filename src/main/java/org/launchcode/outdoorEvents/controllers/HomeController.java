@@ -9,9 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("home")
 public class HomeController {
 
+<<<<<<< HEAD
     @GetMapping
     public String index(Model model){
         model.addAttribute("title", "search");
+=======
+    @GetMapping("")
+    public String index(){
+>>>>>>> main
         return "index";
     }
 }
