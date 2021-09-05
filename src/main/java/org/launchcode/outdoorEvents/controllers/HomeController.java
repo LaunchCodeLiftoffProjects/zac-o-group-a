@@ -6,17 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("home")
+@RequestMapping("")
 public class HomeController {
 
-<<<<<<< HEAD
-    @GetMapping
-    public String index(Model model){
-        model.addAttribute("title", "search");
-=======
-    @GetMapping("")
-    public String index(){
->>>>>>> main
-        return "index";
-    }
+        @GetMapping("")
+        public String index() {return "index";    }
+
 }

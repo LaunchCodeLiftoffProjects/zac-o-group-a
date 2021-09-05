@@ -46,7 +46,7 @@ public class SearchController {
                 events = EventData.findByColumnAndValue(searchType, searchTerm, eventRepository.findAll());
             }
             model.addAttribute("columns", columnChoices);
-            model.addAttribute("title", "events with " + columnChoices.get(searchType) + ": " + searchTerm);
+            model.addAttribute("title", "Events with " + columnChoices.get(searchType) + ": " + searchTerm);
             model.addAttribute("events", events);
             return "search";
         }
