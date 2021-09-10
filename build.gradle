@@ -26,6 +26,7 @@ dependencies {
 	implementation 'mysql:mysql-connector-java:8.0.25'
 	implementation 'org.webjars:bootstrap:5.1.0'
 	//implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.security:spring-security-crypto'
 	implementation 'javax.validation:validation-api:2.0.1.Final'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools:2.5.3'
 	testImplementation('org.springframework.boot:spring-boot-starter-test:2.5.3') {
