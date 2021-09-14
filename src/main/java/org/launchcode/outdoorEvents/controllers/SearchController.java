@@ -38,7 +38,7 @@ public class SearchController {
     }
 
     @PostMapping("results")
-        public String displaySearchResults(Model model, @RequestParam String searchType, @RequestParam String searchTerm){
+        public String displaySearchResults(Model model, @RequestParam (defaultValue = "all") String searchType,  @RequestParam String searchTerm){
             Iterable<Event> events;
             if (searchTerm.toLowerCase().equals("all") || searchTerm.equals("")){
                 events = eventRepository.findAll();
@@ -46,9 +46,12 @@ public class SearchController {
                 events = EventData.findByColumnAndValue(searchType, searchTerm, eventRepository.findAll());
             }
             model.addAttribute("columns", columnChoices);
+<<<<<<< HEAD
             model.addAttribute("title", "Events with " + columnChoices.get(searchType) + ": " + searchTerm);
+=======
+            model.addAttribute("title", "events sorted by " + columnChoices.get(searchType) + ": " + searchTerm);
+>>>>>>> 870316907e82f86df93f1c97bcaec59aa3a4de6d
             model.addAttribute("events", events);
             return "search";
         }
 }
-//TODO fix return mapping.
