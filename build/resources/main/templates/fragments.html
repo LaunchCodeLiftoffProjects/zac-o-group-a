@@ -8,17 +8,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="header">
-    <h1 th:text="${title}">Outdoor Events</h1>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <ul>
-        <li><a th:href="@{/events}">All Events</a></li>
-        <li><a th:href="@{/events/create}">Create Event</a></li>
-        <li><a th:href="@{/search}">Search</a></li>
-    </ul>
-=======
-=======
->>>>>>> 38c3bf7b71aea68ddb18579d99e6de7ef77a5567
+    <h1 th:text="${title}"></h1>
     <div class="container-fluid">
         <a class="navbar-brand" href="#"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,28 +33,13 @@
                         <li><hr class="dropdown-divider"></li>
                     </ul>
                 </li>
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" href="/user/add">Login/Signup</a>-->
-<!--                </li>-->
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <a class="nav-link disabled" href="/user/add" tabindex="-1" aria-disabled="true">Login/Register</a>
                 </li>
             </ul>
-<<<<<<< HEAD
             <form class="d-flex" th:action="@{/search/results}" method = "post">
-                <h2>Search by:</h2>
-
-                <p>
-
-<!--                    <label for="searchTerm"></label>-->
-<!--                    <input type="search" name="searchTerm" id="searchTerm" />-->
-<!--                    <input type="submit" value="Search" />-->
-
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searchTerm" id="searchTerm">
                     <button class="btn btn-outline-success" type="submit" value="Search">Search</button>
-                </p>
-
-                <p>
             <span th:each="column : ${columns}" hidden>
                 <input class="form-control me-2"
                        type="radio"
@@ -75,20 +50,6 @@
                         th:checked="${column.key == 'all'}"/>
                 <label th:for="${column.key}" th:text="${column.value}"></label>
             </span>
-
-                </p>
-=======
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit"><a th:href="@{/search}">Search</a></button>
->>>>>>> 38c3bf7b71aea68ddb18579d99e6de7ef77a5567
-            </form>
-<!--            <form class="d-flex">-->
-<!--                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
-<!--                <button class="btn btn-outline-success" type="submit">Search</button>-->
-<!--            </form>-->
-        </div>
-    </div>
 </nav>
 
 </body>
