@@ -1,5 +1,6 @@
 package org.launchcode.outdoorEvents.controllers;
 
+import com.mysql.cj.x.protobuf.MysqlxDatatypes;
 import org.launchcode.outdoorEvents.data.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,12 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("")
 public class HomeController {
 
-        @Autowired
-        private UserRepository userRepository;
+    @Autowired
+    private UserRepository userRepository;
 
-        @GetMapping("")
-        public String index(Model model){
-            model.addAttribute("title", "Logger");
-            return "index";
-        }
+    @GetMapping("")
+    public MysqlxDatatypes.Scalar.String index(Model model) {
+        model.addAttribute("title", "Logger");
+        return "index";
+    }
 }
