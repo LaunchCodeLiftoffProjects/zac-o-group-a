@@ -26,9 +26,9 @@ public class SearchController {
     public SearchController () {
         columnChoices.put("all", "All");
         columnChoices.put("user", "User");
-        columnChoices.put("events", "Events");
+        columnChoices.put("description", "Description");
         columnChoices.put("location", "Location");
-        columnChoices.put("categories", "Categories");
+        columnChoices.put("eventType", "Event type");
     }
 
     @RequestMapping("")
