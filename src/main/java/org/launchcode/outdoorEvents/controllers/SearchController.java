@@ -1,6 +1,5 @@
 package org.launchcode.outdoorEvents.controllers;
 
-import com.mysql.cj.x.protobuf.MysqlxDatatypes;
 import org.launchcode.outdoorEvents.data.EventCategoryRepository;
 import org.launchcode.outdoorEvents.data.EventRepository;
 import org.launchcode.outdoorEvents.models.Event;
@@ -39,8 +38,7 @@ public class SearchController {
     }
 
     @PostMapping("results")
-        public String displaySearchResults(Model model,
-                                                                  @RequestParam (defaultValue = "all") String searchType, @RequestParam String searchTerm){
+        public String displaySearchResults(Model model, @RequestParam (defaultValue = "all") String searchType,  @RequestParam String searchTerm){
             Iterable<Event> events;
             if (searchTerm.toLowerCase().equals("all") || searchTerm.equals("")){
                 events = eventRepository.findAll();
@@ -48,8 +46,8 @@ public class SearchController {
                 events = EventData.findByColumnAndValue(searchType, searchTerm, eventRepository.findAll());
             }
             model.addAttribute("columns", columnChoices);
-            model.addAttribute("title", "Events with " + columnChoices.get(searchType) + ": " + searchTerm);
             model.addAttribute("title", "events sorted by " + columnChoices.get(searchType) + ": " + searchTerm);
+            model.addAttribute("title", "Events with " + columnChoices.get(searchType) + ": " + searchTerm);
             model.addAttribute("events", events);
             return "search";
         }
