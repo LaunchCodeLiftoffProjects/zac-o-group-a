@@ -12,11 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("")
 public class HomeController {
 
-    @Autowired
-    private UserRepository userRepository;
-
     @GetMapping("")
-    public MysqlxDatatypes.Scalar.String index(Model model) {
+    public String index(Model model) {
         model.addAttribute("title", "Logger");
         return "index";
     }
