@@ -1,4 +1,4 @@
-package org.launchcode.outdoorEvents.forms;
+package org.launchcode.outdoorEvents.models;
 
 import com.sun.istack.NotNull;
 

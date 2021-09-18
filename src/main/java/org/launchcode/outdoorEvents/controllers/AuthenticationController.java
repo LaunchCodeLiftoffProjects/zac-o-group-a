@@ -1,7 +1,8 @@
 package org.launchcode.outdoorEvents.controllers;
 
 import org.launchcode.outdoorEvents.data.UserRepository;
-import org.launchcode.outdoorEvents.forms.RegisterFormDTO;
+import org.launchcode.outdoorEvents.models.LoginFormDTO;
+import org.launchcode.outdoorEvents.models.RegisterFormDTO;
 import org.launchcode.outdoorEvents.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -43,14 +44,14 @@ public class AuthenticationController {
         session.setAttribute(userSessionKey, user.getId());
     }
 
-    @GetMapping("/register")
+    @GetMapping("/user/register")
     public String showSignUpForm(Model model){
         model.addAttribute(new RegisterFormDTO());
         model.addAttribute("title", "Register");
         return "/user/register";
     }
 
-    @PostMapping("/register")
+    @PostMapping("/user/register")
     public String processRegistrationForm(@ModelAttribute @Valid RegisterFormDTO registerFormDTO,
                                           Errors errors, HttpServletRequest request,
                                           Model model) {
@@ -89,7 +90,14 @@ public class AuthenticationController {
         userRepository.save(newUser);
         setUserInSession(request.getSession(), newUser);
 
-        return "/user/process_registration";
+        return "redirect:/";
+    }
+
+    @GetMapping("/user/login")
+    public String displayLoginForm(Model model) {
+        model.addAttribute(new LoginFormDTO());
+        model.addAttribute("title", "Login");
+        return "/user/login";
     }
 
 }

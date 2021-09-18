@@ -33,8 +33,7 @@ public class User extends AbstractEntity{
     public User(){};
 
     public User(String username, String password, String firstName, String lastName, String email /*, List<Event>
-    events,
-                List<Location> locations*/) {
+    events,List<Location> locations*/) {
         this.username = username;
         this.pwHash = encoder.encode(password);
         this.firstName = firstName;

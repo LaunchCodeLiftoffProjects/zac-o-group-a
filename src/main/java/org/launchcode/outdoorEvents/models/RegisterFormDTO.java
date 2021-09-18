@@ -1,11 +1,11 @@
-package org.launchcode.outdoorEvents.forms;
+package org.launchcode.outdoorEvents.models;
 
 import com.sun.istack.NotNull;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-public class RegisterFormDTO extends LoginFormDTO{
+public class RegisterFormDTO extends LoginFormDTO {
 
     private String verifyPassword;
 
