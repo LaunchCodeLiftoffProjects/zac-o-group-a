@@ -18,8 +18,8 @@ public class HomeController {
     @GetMapping("/")
     public String index(Model model){
 
-        User currentUser = userRepository.findByUsername("hitz"); //TODO: Figure out how to do this to the logged in
-        // user.
+        User currentUser = userRepository.findByUsername("hitz");
+        //TODO: Figure out how to do this to the currently logged in user.
         String firstName = currentUser.getFirstName();
         model.addAttribute("title", "Logger");
         model.addAttribute("firstName", firstName);
