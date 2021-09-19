@@ -20,8 +20,14 @@ import java.util.Optional;
 @Controller
 public class AuthenticationController {
 
-        @Autowired
-        UserRepository userRepository;
+    @Autowired
+    UserRepository userRepository;
+
+    /*
+     *
+     *Session
+     *
+     */
 
     private static final String userSessionKey = "user";
 
@@ -43,6 +49,12 @@ public class AuthenticationController {
     private static void setUserInSession(HttpSession session, User user) {
         session.setAttribute(userSessionKey, user.getId());
     }
+
+    /*
+     *
+     *Register
+     *
+     */
 
     @GetMapping("/user/register")
     public String showSignUpForm(Model model){
@@ -90,14 +102,63 @@ public class AuthenticationController {
         userRepository.save(newUser);
         setUserInSession(request.getSession(), newUser);
 
-        return "redirect:/";
+        return "/user/process_registration";
     }
+
+    /*
+    *
+    *Login
+    *
+    */
 
     @GetMapping("/user/login")
     public String displayLoginForm(Model model) {
         model.addAttribute(new LoginFormDTO());
         model.addAttribute("title", "Login");
         return "/user/login";
+    }
+
+    @PostMapping("/user/login")
+    public String processLoginForm(@ModelAttribute @Valid LoginFormDTO loginFormDTO,
+                                   Errors errors, HttpServletRequest request,
+                                   Model model) {
+
+        if (errors.hasErrors()) {
+            model.addAttribute("title", "Log In");
+            return "/user/login";
+        }
+
+        User theUser = userRepository.findByUsername(loginFormDTO.getUsername());
+
+        if (theUser == null) {
+            errors.rejectValue("username", "user.invalid", "The given username does not exist");
+            model.addAttribute("title", "Log In");
+            return "/user/login";
+        }
+
+        String password = loginFormDTO.getPassword();
+
+        if (!theUser.isMatchingPassword(password)) {
+            errors.rejectValue("password", "password.invalid", "Invalid password");
+            model.addAttribute("title", "Log In");
+            return "/user/login";
+        }
+
+        setUserInSession(request.getSession(), theUser);
+
+        return "redirect:/";
+    }
+
+    /*
+     *
+     *Logout
+     *
+     */
+
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request){
+        request.getSession().invalidate();
+        return "redirect:/user/login";
     }
 
 }
