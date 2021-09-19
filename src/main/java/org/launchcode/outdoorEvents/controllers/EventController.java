@@ -53,7 +53,7 @@ public class EventController {
 
     @GetMapping("delete")
     public String displayDeleteEventForm(Model model) {
-          model.addAttribute("title", "Delete Events");
+          model.addAttribute("title", "Delete Event");
           model.addAttribute("events", eventRepository.findAll());
             return "events/delete";
     }
