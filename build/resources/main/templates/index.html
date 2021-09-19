@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head th:replace="fragments :: head"></head>
+<head th:replace="fragments :: head">
+</head>
 <body class="container">
 
-<h1>Outdoor Events</h1>
-
 <header th:replace="fragments :: header"></header>
+<h1>Outdoor Events</h1>
+Hello, <div th:text="${firstName}"></div>
 
 </body>
 </html>
