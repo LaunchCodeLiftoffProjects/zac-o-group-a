@@ -146,6 +146,9 @@ public class AuthenticationController {
 
         setUserInSession(request.getSession(), theUser);
 
+        String firstName = theUser.getFirstName();
+        model.addAttribute("firstName", firstName);
+
         return "redirect:/";
     }
 
