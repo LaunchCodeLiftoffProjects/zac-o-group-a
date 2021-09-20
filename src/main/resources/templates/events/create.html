@@ -22,7 +22,7 @@
                 <div class="col-6">
                     <label class="sr-only" for="eventDescription"><br>
                         <input id="eventDescription" class="form-control" placeholder="Event Description"
-                               th:field="${event.title}" required>
+                               th:field="${event.description}" required>
                     </label>
                 </div>
                     <p class="error" th:errors="${event.description}"></p>
@@ -34,11 +34,11 @@
                         <select th:field="${event.type}">
                             <option th:each="type : ${types}"
                                     th:value="${type}"
-                                    th:text="${type.displayName}">
+                                    th:text="${event.type}">
                             </option>
                         </select>
                 </div>
-                    <p class="error" th:errors="${event.title}"></p>
+                    <p class="error" th:errors="${event.type}"></p>
             </div>
 
             <div class="form_group button">
