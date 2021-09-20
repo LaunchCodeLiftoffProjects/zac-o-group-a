@@ -5,38 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ecd3f4b-e3bc-4089-b71a-59524d66f1d0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/launchcode/outdoorEvents/OutdoorEventsApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/launchcode/outdoorEvents/controllers/AuthenticationController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/launchcode/outdoorEvents/controllers/EventCategoryController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/launchcode/outdoorEvents/controllers/EventController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/launchcode/outdoorEvents/controllers/HomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/launchcode/outdoorEvents/controllers/SearchController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/launchcode/outdoorEvents/data/EventCategoryRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/launchcode/outdoorEvents/data/EventRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/launchcode/outdoorEvents/data/LocationRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/launchcode/outdoorEvents/data/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/launchcode/outdoorEvents/models/AbstractEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/launchcode/outdoorEvents/models/Event.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/launchcode/outdoorEvents/models/EventCategory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/launchcode/outdoorEvents/models/EventData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/launchcode/outdoorEvents/models/EventType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/launchcode/outdoorEvents/models/Location.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/launchcode/outdoorEvents/models/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/launchcode/outdoorEvents/controllers/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/launchcode/outdoorEvents/controllers/AuthenticationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/launchcode/outdoorEvents/controllers/EventController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/launchcode/outdoorEvents/controllers/EventController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/launchcode/outdoorEvents/controllers/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/launchcode/outdoorEvents/controllers/HomeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/templates/events/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/events/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/events/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/events/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/outdoorEvents/controllers/EventCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/outdoorEvents/controllers/EventCategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/outdoorEvents/controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/outdoorEvents/controllers/AuthenticationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/outdoorEvents/controllers/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/outdoorEvents/controllers/EventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/outdoorEvents/controllers/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/outdoorEvents/controllers/SearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/outdoorEvents/data/EventCategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/outdoorEvents/data/EventCategoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/outdoorEvents/models/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/outdoorEvents/models/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/outdoorEvents/models/EventCategory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/outdoorEvents/models/EventType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/outdoorEvents/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/outdoorEvents/controllers/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/events/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/events/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/events/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/events/delete.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/events/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/events/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/process_registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/process_registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

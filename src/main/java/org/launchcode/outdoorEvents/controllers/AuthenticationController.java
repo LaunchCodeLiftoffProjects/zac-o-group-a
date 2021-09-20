@@ -145,12 +145,8 @@ public class AuthenticationController {
         }
 
         setUserInSession(request.getSession(), theUser);
-        model.addAttribute("firstName", theUser.getFirstName());
-        model.addAttribute("lastName", theUser.getLastName());
 
-
-
-        return "index";
+        return "redirect:/";
     }
 
     /*
