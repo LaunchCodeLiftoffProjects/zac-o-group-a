@@ -15,9 +15,9 @@ public class Event extends AbstractEntity {
     @Size(max = 500, message = "Description too long!")
     private String description;
 
-    private EventType type;
+    private String type;
 
-    public Event(String title, String description, EventType type) {
+    public Event(String title, String description, String type) {
         this.title = title;
         this.description = description;
         this.type = type;
@@ -41,13 +41,9 @@ public class Event extends AbstractEntity {
         this.description = description;
     }
 
-    public EventType getType() {
-        return type;
-    }
+    public String getType() {return type;}
 
-    public void setType(EventType type) {
-        this.type = type;
-    }
+    public void setType(String type) {this.type = type;}
 
     @Override
     public String toString() {
