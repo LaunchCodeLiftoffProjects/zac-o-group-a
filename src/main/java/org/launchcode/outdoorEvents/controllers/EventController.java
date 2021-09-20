@@ -2,7 +2,7 @@ package org.launchcode.outdoorEvents.controllers;
 
 import org.launchcode.outdoorEvents.data.EventRepository;
 import org.launchcode.outdoorEvents.models.Event;
-import org.launchcode.outdoorEvents.models.EventType;
+//import org.launchcode.outdoorEvents.models.EventType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,31 +15,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("events")
 public class EventController {
     @Autowired
     private EventRepository eventRepository;
-    @GetMapping
+
+    @GetMapping("events")
     public String displayAllEvents(Model model) {
-            List<String> events = new ArrayList<>();
-            events.add("Hiking");
-            events.add("fishing");
-            events.add("Rock Climbing");
-            model.addAttribute("events", events);
             model.addAttribute("title", "All Events");
             model.addAttribute("events", eventRepository.findAll());
-           return "events/index";
+            return "events/index";
     }
 
-    @GetMapping("create")
+    @GetMapping("/events/create")
     public String displayCreateEventForm(Model model) {
             model.addAttribute("title", "Create Event");
             model.addAttribute(new Event());
-            model.addAttribute("types", EventType.values());
+            model.addAttribute("types", "Event Type");
             return "events/create";
     }
 
-    @PostMapping("create")
+    @PostMapping("/events/create")
     public String processCreateEventForm(@ModelAttribute @Valid Event newEvent,
                                            Errors errors, Model model) {
           if(errors.hasErrors()) {
@@ -51,14 +46,14 @@ public class EventController {
           return "redirect:";
     }
 
-    @GetMapping("delete")
+    @GetMapping("events/delete")
     public String displayDeleteEventForm(Model model) {
           model.addAttribute("title", "Delete Event");
           model.addAttribute("events", eventRepository.findAll());
             return "events/delete";
     }
 
-    @PostMapping("delete")
+    @PostMapping("events/delete")
     public String processDeleteEventsForm(@RequestParam(required = false) int[] eventIds) {
           if (eventIds != null) {
               for (int id : eventIds) {

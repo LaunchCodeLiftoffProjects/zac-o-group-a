@@ -1,6 +1,6 @@
 package org.launchcode.outdoorEvents.controllers;
 
-import org.launchcode.outdoorEvents.data.EventCategoryRepository;
+//import org.launchcode.outdoorEvents.data.EventCategoryRepository;
 import org.launchcode.outdoorEvents.data.EventRepository;
 import org.launchcode.outdoorEvents.models.Event;
 import org.launchcode.outdoorEvents.models.EventData;
@@ -12,14 +12,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 
 @Controller
-@RequestMapping("search")
 public class SearchController {
 
-        @Autowired
-        private EventRepository eventRepository;
+    @Autowired
+    private EventRepository eventRepository;
 
-        @Autowired
-        private EventCategoryRepository eventCategoryRepository;
 
     static HashMap<String, String> columnChoices = new HashMap<>();
 
@@ -31,13 +28,13 @@ public class SearchController {
         columnChoices.put("eventType", "Event type");
     }
 
-    @RequestMapping("")
+    @GetMapping("/search")
     public String search(Model model) {
         model.addAttribute("columns", columnChoices);
         return "search";
     }
 
-    @PostMapping("results")
+    @PostMapping("/search/results")
         public String displaySearchResults(Model model, @RequestParam (defaultValue = "all") String searchType,  @RequestParam String searchTerm){
             Iterable<Event> events;
             if (searchTerm.toLowerCase().equals("all") || searchTerm.equals("")){
