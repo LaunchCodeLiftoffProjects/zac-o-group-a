@@ -46,16 +46,17 @@
                 </li>
             </ul>
             <form class="d-flex" th:action="@{/search/results}" method = "post">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searchTerm" id="searchTerm">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                           name="searchTerm" id="searchTerm" required/>
                     <button class="btn btn-outline-success" type="submit" value="Search">Search</button>
             <span th:each="column : ${columns}" hidden>
                 <input class="form-control me-2"
                        type="radio"
                        placeholder="Search"
-                        name="searchType"
-                        th:id="${column.key}"
-                        th:value="${column.key}"
-                        th:checked="${column.key == 'all'}"/>
+                       name="searchType"
+                       th:id="${column.key}"
+                       th:value="${column.key}"
+                       th:checked="${column.key == 'all'}"/>
                 <label th:for="${column.key}" th:text="${column.value}"></label>
             </span>
             </form>

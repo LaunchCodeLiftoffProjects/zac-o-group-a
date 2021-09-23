@@ -4,6 +4,7 @@ import com.sun.istack.NotNull;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import java.util.List;
 
@@ -27,9 +28,11 @@ public class User extends AbstractEntity{
 
 
     @OneToMany
+    @JoinColumn(name="user_id")
     private List<Event> events;
 
     @OneToMany
+    @JoinColumn(name="location_id")
     private List<Location> locations;
 
     public User(){};

@@ -1,5 +1,6 @@
 package org.launchcode.outdoorEvents.controllers;
 
+import org.launchcode.outdoorEvents.data.EventCategoryRepository;
 import org.launchcode.outdoorEvents.data.EventRepository;
 import org.launchcode.outdoorEvents.models.Event;
 //import org.launchcode.outdoorEvents.models.EventType;
@@ -19,6 +20,9 @@ public class EventController {
     @Autowired
     private EventRepository eventRepository;
 
+    @Autowired
+    private EventCategoryRepository eventCategoryRepository;
+
     @GetMapping("events")
     public String displayAllEvents(Model model) {
             model.addAttribute("title", "All Events");
@@ -29,7 +33,9 @@ public class EventController {
     @GetMapping("/events/create")
     public String displayCreateEventForm(Model model) {
             model.addAttribute("title", "Create Event");
+            model.addAttribute("eventTypes", eventCategoryRepository.findAll());
             model.addAttribute(new Event());
+
             return "events/create";
     }
 

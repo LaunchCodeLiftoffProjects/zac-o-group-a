@@ -1,52 +1,55 @@
-//package org.launchcode.outdoorEvents.controllers;
-//
-//import org.launchcode.outdoorEvents.data.EventCategoryRepository;
-//import org.launchcode.outdoorEvents.models.EventCategory;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.stereotype.Controller;
-//import org.springframework.ui.Model;
-//import org.springframework.validation.Errors;
-//import org.springframework.web.bind.annotation.GetMapping;
-//import org.springframework.web.bind.annotation.ModelAttribute;
-//import org.springframework.web.bind.annotation.PostMapping;
-//import org.springframework.web.bind.annotation.RequestMapping;
-//
-//import javax.validation.Valid;
-//
-//@Controller
-//@RequestMapping("eventCategories")
-//public class EventCategoryController {
-//
-//    @Autowired
-//    private EventCategoryRepository eventCategoryRepository;
-//
-//    @GetMapping
-//    public String displayAllCategories(Model model) {
-//        model.addAttribute("title", "All Categories");
-//        model.addAttribute("categories", eventCategoryRepository.findAll());
-//        return "eventCategories/index";
-//    }
-//
-//    @GetMapping("create")
-//    public String renderCreateEventCategoryForm(Model model) {
-//        model.addAttribute("title", "Create Category");
-//        model.addAttribute(new EventCategory());
-//        return "eventCategories/create";
-//    }
-//
-//    @PostMapping("create")
-//    public String processCreateEventCategoryForm(@Valid @ModelAttribute EventCategory eventCategory,
-//                                                 Errors errors, Model model) {
-//
-//        if (errors.hasErrors()) {
-//            model.addAttribute("title", "Create Category");
-//            model.addAttribute(new EventCategory());
-//            return "eventCategories/create";
-//        }
-//
-//        eventCategoryRepository.save(eventCategory);
-//        return "redirect:";
-//    }
-//
-//}
-//
+package org.launchcode.outdoorEvents.controllers;
+
+import org.launchcode.outdoorEvents.data.EventCategoryRepository;
+import org.launchcode.outdoorEvents.data.EventRepository;
+import org.launchcode.outdoorEvents.models.EventCategory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.validation.Valid;
+
+@Controller
+public class EventCategoryController {
+
+    @Autowired
+    private EventCategoryRepository eventCategoryRepository;
+
+    @Autowired
+    private EventRepository eventRepository;
+
+    @GetMapping("event-categories/index")
+    public String displayAllCategories(Model model) {
+        model.addAttribute("title", "All Categories");
+        model.addAttribute("types", eventCategoryRepository.findAll());
+        model.addAttribute("events", eventRepository.findAll());
+        return "event-categories/index";
+    }
+
+    @GetMapping("event-categories/addType")
+    public String renderCreateEventCategoryForm(Model model) {
+        model.addAttribute("title", "Create Category");
+        model.addAttribute(new EventCategory());
+        return "event-categories/addType";
+    }
+
+    @PostMapping("event-categories/addType")
+    public String processCreateEventCategoryForm(@Valid @ModelAttribute EventCategory eventCategory,
+                                                 Errors errors, Model model) {
+
+        if (errors.hasErrors()) {
+            model.addAttribute("title", "Create Category");
+            return "event-categories/addType";
+        }
+
+        eventCategoryRepository.save(eventCategory);
+        return "redirect:/event-categories/index";
+    }
+
+}
+
