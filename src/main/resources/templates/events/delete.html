@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-<body class="container">
+<body class="container-fluid">
 
 <header th:replace="fragments :: header"></header>
 
@@ -9,7 +9,7 @@
   <th:block th:each="event : ${events}">
       <div class="form-group">
       <label>
-        <span th:text="${event.title}"></span>
+        <span th:text="${event.name}"></span>
         <input type="checkbox" name="eventIds" th:value="${event.id}" class="form-control">
       </label>
       </div>

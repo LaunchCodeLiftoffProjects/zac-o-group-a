@@ -2,14 +2,14 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head">
 </head>
-<body class="container">
+<body class="container-fluid">
 
 <header th:replace="fragments :: header"></header>
 
 <div class="container body-content">
 
 
-    <form th:action="@{/search/results}" method = "post">
+    <form th:action="@{/search/results}" method="post" style="max-width: 600px; margin: 0 auto" autocomplete="off"/>
         <h2>Search by:</h2>
         <p>
             <span th:each="column : ${columns}">
@@ -40,12 +40,12 @@
             <td>
                 <p>
                     Event title:
-                    <a th:text="${event.title}"></a>
+                    <a th:text="${event.name}"></a>
                 </p>
                 <p th:text="${'User: ' + 'user here'}"></p>
                 <p>
                     Event type:
-                    <a  th:text="${event.type}"></a>
+                    <a  th:text="${event.type[0]}"></a>
                 </p>
                 <p>
                     Location:
