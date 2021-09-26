@@ -31,6 +31,8 @@
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="/events/delete">Delete Event</a></li>
                         <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/events/editSelect">Edit Event</a></li>
+                        <li><hr class="dropdown-divider"></li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -50,6 +52,9 @@
                         th:checked="${column.key == 'all'}"/>
                 <label th:for="${column.key}" th:text="${column.value}"></label>
             </span>
+            </form>
+        </div>
+    </div>
 </nav>
 
 </body>
