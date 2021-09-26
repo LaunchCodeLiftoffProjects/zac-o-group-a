@@ -17,13 +17,18 @@ import java.util.List;
 
 @Controller
 public class EventController {
+
     @Autowired
     private EventRepository eventRepository;
 
+<<<<<<< HEAD
     @Autowired
     private EventCategoryRepository eventCategoryRepository;
 
     @GetMapping("events")
+=======
+    @GetMapping
+>>>>>>> 207e891ba10255cd6e7ed0ebecae26116ec78b98
     public String displayAllEvents(Model model) {
             model.addAttribute("title", "All Events");
             model.addAttribute("events", eventRepository.findAll());
@@ -60,13 +65,28 @@ public class EventController {
 
     @PostMapping("events/delete")
     public String processDeleteEventsForm(@RequestParam(required = false) int[] eventIds) {
-          if (eventIds != null) {
-              for (int id : eventIds) {
-                   eventRepository.deleteById(id);
-               }
+        if (eventIds != null) {
+            for (int id : eventIds) {
+                eventRepository.deleteById(id);
             }
-         return "redirect:";
+        }         return "redirect:";
     }
 
-}
+    @GetMapping("editSelect")
+    public String selectEditEventForm(Model model) {
+        model.addAttribute("title", "Edit Events");
+        model.addAttribute("events", eventRepository.findAll());
 
+        return "events/editSelect";
+    }
+
+    @PostMapping("editSelect")
+    public String processSelectEditEventForm(@RequestParam(required = false) int[] eventEdit, Model model) {
+        if (eventEdit != null) {
+            for (int id : eventEdit) {
+                model.addAttribute("eventEdit", eventRepository.findById(id));
+            }
+        }
+         return "events/edit";
+    }
+}
