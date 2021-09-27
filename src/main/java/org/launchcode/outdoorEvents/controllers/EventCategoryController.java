@@ -1,7 +1,6 @@
 package org.launchcode.outdoorEvents.controllers;
 
 import org.launchcode.outdoorEvents.data.EventCategoryRepository;
-import org.launchcode.outdoorEvents.data.EventRepository;
 import org.launchcode.outdoorEvents.models.EventCategory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,40 +14,38 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.validation.Valid;
 
 @Controller
+@RequestMapping("eventCategories")
 public class EventCategoryController {
 
     @Autowired
     private EventCategoryRepository eventCategoryRepository;
 
-    @Autowired
-    private EventRepository eventRepository;
-
-    @GetMapping("event-categories/index")
+    @GetMapping
     public String displayAllCategories(Model model) {
         model.addAttribute("title", "All Categories");
-        model.addAttribute("types", eventCategoryRepository.findAll());
-        model.addAttribute("events", eventRepository.findAll());
-        return "event-categories/index";
+        model.addAttribute("categories", eventCategoryRepository.findAll());
+        return "eventCategories/index";
     }
 
-    @GetMapping("event-categories/addType")
+    @GetMapping("create")
     public String renderCreateEventCategoryForm(Model model) {
         model.addAttribute("title", "Create Category");
         model.addAttribute(new EventCategory());
-        return "event-categories/addType";
+        return "eventCategories/create";
     }
 
-    @PostMapping("event-categories/addType")
+    @PostMapping("create")
     public String processCreateEventCategoryForm(@Valid @ModelAttribute EventCategory eventCategory,
                                                  Errors errors, Model model) {
 
         if (errors.hasErrors()) {
             model.addAttribute("title", "Create Category");
-            return "event-categories/addType";
+            model.addAttribute(new EventCategory());
+            return "eventCategories/create";
         }
 
         eventCategoryRepository.save(eventCategory);
-        return "redirect:/event-categories/index";
+        return "redirect:";
     }
 
 }

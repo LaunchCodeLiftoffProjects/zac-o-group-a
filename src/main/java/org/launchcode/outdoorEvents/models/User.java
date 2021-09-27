@@ -1,66 +1,68 @@
 package org.launchcode.outdoorEvents.models;
 
-import com.sun.istack.NotNull;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.List;
 
-
 @Entity
-public class User extends AbstractEntity{
+public class User{
 
-    private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+    @Id
+    @GeneratedValue
+    private Integer userID;
 
-
-    @NotNull
-    private String username;
-    @NotNull
-    private String pwHash;
-    @NotNull
-    private String firstName;
-    @NotNull
-    private String lastName;
-    @NotNull
+    @Column(nullable = false, unique = true, length = 45)
     private String email;
+    @Column(nullable = false, length = 20)
+    private String password;
+    @Column(nullable = false, length = 25)
+    private String firstName;
+    @Column(nullable = false, length = 25)
+    private String lastName;
 
 
-    @OneToMany
-    @JoinColumn(name="user_id")
-    private List<Event> events;
-
-    @OneToMany
-    @JoinColumn(name="location_id")
-    private List<Location> locations;
+//    @OneToMany
+//    private List<Event> events;
+//
+//    @OneToMany
+//    private List<Location> locations;
 
     public User(){};
 
-    public User(String username, String password, String firstName, String lastName, String email) {
-        this.username = username;
-        this.pwHash = encoder.encode(password);
+
+    public User(Integer userIDid, String email,String firstName, String lastName, String password/*List<Event> events,
+                List<Location> locations*/) {
+        this.userID = userIDid;
+        this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.email = email;
+        this.password = password;
+//        this.events = events;
+//        this.locations = locations;
     }
 
-
-    public List<Event> getEvents() {
-        return events;
+    public String getPassword() { //TODO Figure out how to hash
+        return password;
     }
 
-    public void setEvents(List<Event> events) {
-        this.events = events;
-    }
+    public void setPassword(String password) { this.password = password;}
 
-    public List<Location> getLocations() {return locations;}
+//    public List<Event> getEvents() {
+//        return events;
+//    }
+//
+//    public void setEvents(List<Event> events) {
+//        this.events = events;
+//    }
 
-    public void setLocations(List<Location> locations) {this.locations = locations;}
+    public String getEmail() {return email; }
 
-    public String getUsername() {return username; }
+    public void setEmail(String email) { this.email = email;}
 
-    public void setUsername(String username) { this.username = username;}
+    public int getId() {return userID;}
+
+    public void setId(int id) {this.userID = userID;}
 
     public String getFirstName() {return firstName;}
 
@@ -70,14 +72,8 @@ public class User extends AbstractEntity{
 
     public void setLastName(String lastName) {this.lastName = lastName;}
 
-    public boolean isMatchingPassword(String password) {return encoder.matches(password, pwHash);}
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
+//    public List<Location> getLocations() {return locations;}
+//
+//    public void setLocations(List<Location> locations) {this.locations = locations;}
 }
 

@@ -2,18 +2,25 @@ package org.launchcode.outdoorEvents.models;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Entity
 public class Location extends AbstractEntity{
 
 
-    private String location; //TODO implement with maps API
+    private String longitude;
+    private String latitude;
 
     @Size(max = 500, message = "Description too long!")
     private String description;
 
-    public Location(String location, String description) {
-        this.location = location;
+    public Location() {
+    }
+
+    public Location(String longitude, String latitude, String description) {
+        super();
+        this.longitude = longitude;
+        this.latitude = latitude;
         this.description = description;
     }
 
@@ -25,13 +32,17 @@ public class Location extends AbstractEntity{
         this.description = description;
     }
 
-    public String getLocation() {
-        return location;
+    public String getLongitude() {return longitude; }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public String getLatitude() {
+        return latitude;
     }
 
-
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
 }
