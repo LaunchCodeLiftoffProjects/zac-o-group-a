@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -23,7 +20,7 @@ public class EventCategoryController {
     @Autowired
     private EventRepository eventRepository;
 
-    @GetMapping("event-categories/index")
+    @GetMapping("event-categories")
     public String displayAllCategories(Model model) {
         model.addAttribute("title", "All Categories");
         model.addAttribute("types", eventCategoryRepository.findAll());
@@ -48,7 +45,24 @@ public class EventCategoryController {
         }
 
         eventCategoryRepository.save(eventCategory);
-        return "redirect:/event-categories/index";
+        return "redirect:/event-categories/addType";
+    }
+
+    @GetMapping("/event-categories/deleteType")
+    public String displayDeleteEventForm(Model model) {
+        model.addAttribute("title", "All Categories");
+        model.addAttribute("types", eventCategoryRepository.findAll());
+        model.addAttribute("events", eventRepository.findAll());
+        return "event-categories/deleteType";
+    }
+
+    @PostMapping("event-categories/deleteType")
+    public String processDeleteEventsForm(@RequestParam(required = false) int[] eventIds) {
+        if (eventIds != null) {
+            for (int id : eventIds) {
+                eventCategoryRepository.deleteById(id);
+            }
+        }         return "redirect:/event-categories/deleteType";
     }
 
 }

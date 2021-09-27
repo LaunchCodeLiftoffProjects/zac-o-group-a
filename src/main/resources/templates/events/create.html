@@ -36,14 +36,14 @@
                                     th:text="${type.name}">
                             </option>
                         </select>
-                    <a href="/event-categories/index">Add Event Type</a>
+                    <a href="/event-categories/">Add Event Type</a>
                 </div>
                     <p class="error" th:errors="${event.type}"></p>
             </div>
 
             <div class="form_group button">
                 <div class="col-6"><br><br>
-                    <button type="submit" class="btn btn-primary" value="createEvent"/>Create</button/>
+                    <button type="submit" class="btn btn-success" value="createEvent"/>Create</button/>
                 </div>
             </div>
         </form>

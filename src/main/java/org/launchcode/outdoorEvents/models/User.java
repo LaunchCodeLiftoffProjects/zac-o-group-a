@@ -1,11 +1,14 @@
 package org.launchcode.outdoorEvents.models;
 
 import com.sun.istack.NotNull;
+import org.launchcode.outdoorEvents.data.EventRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -29,11 +32,11 @@ public class User extends AbstractEntity{
 
     @OneToMany
     @JoinColumn(name="user_id")
-    private List<Event> events;
+    private List<Event> events = new ArrayList<>();
 
     @OneToMany
     @JoinColumn(name="location_id")
-    private List<Location> locations;
+    private List<Location> locations = new ArrayList<>();
 
     public User(){};
 
@@ -46,7 +49,7 @@ public class User extends AbstractEntity{
     }
 
 
-    public List<Event> getEvents() {
+    public Iterable<Event> getEvents() {
         return events;
     }
 

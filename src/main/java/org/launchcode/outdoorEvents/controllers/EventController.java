@@ -2,8 +2,9 @@ package org.launchcode.outdoorEvents.controllers;
 
 import org.launchcode.outdoorEvents.data.EventCategoryRepository;
 import org.launchcode.outdoorEvents.data.EventRepository;
+import org.launchcode.outdoorEvents.data.UserRepository;
 import org.launchcode.outdoorEvents.models.Event;
-//import org.launchcode.outdoorEvents.models.EventType;
+import org.launchcode.outdoorEvents.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,24 +12,43 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class EventController {
 
     @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
     private EventRepository eventRepository;
 
-<<<<<<< HEAD
     @Autowired
     private EventCategoryRepository eventCategoryRepository;
 
+    private static final String userSessionKey = "user";
+
+    public User getUserFromSession(HttpSession session) {
+        Integer userId = (Integer) session.getAttribute(userSessionKey);
+        if (userId == null) {
+            return null;
+        }
+
+        Optional<User> user = userRepository.findById(userId);
+
+        if (user.isEmpty()) {
+            return null;
+        }
+
+        return user.get();
+    }
+
     @GetMapping("events")
-=======
-    @GetMapping
->>>>>>> 207e891ba10255cd6e7ed0ebecae26116ec78b98
     public String displayAllEvents(Model model) {
             model.addAttribute("title", "All Events");
             model.addAttribute("events", eventRepository.findAll());
@@ -45,18 +65,18 @@ public class EventController {
     }
 
     @PostMapping("/events/create")
-    public String processCreateEventForm(@ModelAttribute @Valid Event newEvent,
-                                           Errors errors, Model model) {
+    public String processCreateEventForm(@ModelAttribute @Valid Event newEvent, Errors errors, Model model) {
           if(errors.hasErrors()) {
-                model.addAttribute("title", "Create Event");
+              model.addAttribute("title", "Create Event");
              return "events/create";
           }
+          //theUser.setEvents(events);
 
           eventRepository.save(newEvent);
           return "redirect:";
     }
 
-    @GetMapping("events/delete")
+    @GetMapping("/events/delete")
     public String displayDeleteEventForm(Model model) {
           model.addAttribute("title", "Delete Event");
           model.addAttribute("events", eventRepository.findAll());
@@ -72,7 +92,7 @@ public class EventController {
         }         return "redirect:";
     }
 
-    @GetMapping("editSelect")
+    @GetMapping("events/editSelect")
     public String selectEditEventForm(Model model) {
         model.addAttribute("title", "Edit Events");
         model.addAttribute("events", eventRepository.findAll());
@@ -80,13 +100,13 @@ public class EventController {
         return "events/editSelect";
     }
 
-    @PostMapping("editSelect")
+    @PostMapping("events/editSelect")
     public String processSelectEditEventForm(@RequestParam(required = false) int[] eventEdit, Model model) {
         if (eventEdit != null) {
             for (int id : eventEdit) {
                 model.addAttribute("eventEdit", eventRepository.findById(id));
             }
         }
-         return "events/edit";
+         return "events/editSelect";
     }
 }

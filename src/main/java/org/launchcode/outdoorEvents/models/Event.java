@@ -1,9 +1,6 @@
 package org.launchcode.outdoorEvents.models;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
@@ -13,8 +10,8 @@ import java.util.List;
 public class Event extends AbstractEntity {
 
     @ManyToOne
+    //@JoinColumn(name="user_id")
     private User user;
-
 
     @NotBlank(message = "Description is required")
     @Size(max = 500, message = "Description too long!")

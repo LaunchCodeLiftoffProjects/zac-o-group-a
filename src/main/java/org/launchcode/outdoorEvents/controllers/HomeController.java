@@ -1,5 +1,6 @@
 package org.launchcode.outdoorEvents.controllers;
 
+import org.launchcode.outdoorEvents.data.EventRepository;
 import org.launchcode.outdoorEvents.data.UserRepository;
 import org.launchcode.outdoorEvents.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +14,13 @@ import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
 @Controller
-public class HomeController {
+public class HomeController{
 
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
+
+    @Autowired
+    private EventRepository eventRepository;
 
     private static final String userSessionKey = "user";
 
@@ -43,6 +47,7 @@ public class HomeController {
 
         model.addAttribute("firstName", theUser.getFirstName());
         model.addAttribute("lastName", theUser.getLastName());
+        model.addAttribute("events", eventRepository.findAll());
         model.addAttribute("title", "Logger");
         return "index";
     }

@@ -12,6 +12,13 @@
 
 Hello, <text th:text="${firstName}"></text> <text th:text="${lastName}"></text>
 
+<br>
+<table>
+    <tr th:each="event : ${events}">
+        <td th:text="${event.name}"></td>
+    </tr>
+</table>
+
 <footer th:replace="fragments :: footer"></footer>
 
 </body>
