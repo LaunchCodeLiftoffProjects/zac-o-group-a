@@ -13,10 +13,10 @@
         <div class="col-6">
           <label class="sr-only"  for="username"><br>
             <input id="username" type="text" class="form-control"
-                   placeholder="Username" th:field="${loginFormDTO.username}" required />
+                   placeholder="Username" th:field="${loginFormDTO.name}" required />
           </label>
         </div>
-          <p class="error" th:errors="${loginFormDTO.username}"></p>
+          <p class="error" th:errors="${loginFormDTO.name}"></p>
       </div>
 
     <div class="form_group row">

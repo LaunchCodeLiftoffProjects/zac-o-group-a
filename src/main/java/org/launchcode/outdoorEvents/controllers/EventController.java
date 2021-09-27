@@ -70,7 +70,7 @@ public class EventController {
               model.addAttribute("title", "Create Event");
              return "events/create";
           }
-          //theUser.setEvents(events);
+
 
           eventRepository.save(newEvent);
           return "redirect:";

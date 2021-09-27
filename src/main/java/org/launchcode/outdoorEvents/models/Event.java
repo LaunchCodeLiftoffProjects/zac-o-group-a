@@ -10,7 +10,7 @@ import java.util.List;
 public class Event extends AbstractEntity {
 
     @ManyToOne
-    //@JoinColumn(name="user_id")
+    @JoinColumn(name="user_id")
     private User user;
 
     @NotBlank(message = "Description is required")

@@ -2,23 +2,52 @@ package org.launchcode.outdoorEvents.controllers;
 
 import org.launchcode.outdoorEvents.data.EventCategoryRepository;
 import org.launchcode.outdoorEvents.data.EventRepository;
+import org.launchcode.outdoorEvents.data.UserRepository;
 import org.launchcode.outdoorEvents.models.EventCategory;
+import org.launchcode.outdoorEvents.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.util.Optional;
 
 @Controller
-public class EventCategoryController {
+public class EventCategoryController{
+
+    @Autowired
+    private UserRepository userRepository;
 
     @Autowired
     private EventCategoryRepository eventCategoryRepository;
 
     @Autowired
     private EventRepository eventRepository;
+
+    private static final String userSessionKey = "user";
+
+    public User getUserFromSession(HttpSession session) {
+        Integer userId = (Integer) session.getAttribute(userSessionKey);
+        if (userId == null) {
+            return null;
+        }
+
+        Optional<User> user = userRepository.findById(userId);
+
+        if (user.isEmpty()) {
+            return null;
+        }
+
+        return user.get();
+    }
+
+    private static void setUserInSession(HttpSession session, User user) {
+        session.setAttribute(userSessionKey, user.getId());
+    }
 
     @GetMapping("event-categories")
     public String displayAllCategories(Model model) {
@@ -36,8 +65,8 @@ public class EventCategoryController {
     }
 
     @PostMapping("event-categories/addType")
-    public String processCreateEventCategoryForm(@Valid @ModelAttribute EventCategory eventCategory,
-                                                 Errors errors, Model model) {
+    public String processCreateEventCategoryForm(@Valid @ModelAttribute EventCategory eventCategory, Errors errors,
+                                                 Model model) {
 
         if (errors.hasErrors()) {
             model.addAttribute("title", "Create Category");
