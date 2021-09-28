@@ -73,10 +73,10 @@ public class AuthenticationController {
             return "/user/register";
         }
 
-        User existingUser = userRepository.findByUsername(registerFormDTO.getUsername());
+        User existingUser = userRepository.findByName(registerFormDTO.getName());
 
         if (existingUser != null) {
-            errors.rejectValue("username", "username.alreadyexists", "A user with that username already exists");
+            errors.rejectValue("name", "name.alreadyexists", "A user with that username already exists");
             model.addAttribute("title", "Register");
             return "/user/register";
         }
@@ -97,12 +97,12 @@ public class AuthenticationController {
             return "/user/register";
         }
 
-        User newUser = new User(registerFormDTO.getUsername(), registerFormDTO.getPassword(),
+        User newUser = new User(registerFormDTO.getName(), registerFormDTO.getPassword(),
                 registerFormDTO.getFirstName(), registerFormDTO.getLastName(), registerFormDTO.getEmail());
         userRepository.save(newUser);
         setUserInSession(request.getSession(), newUser);
 
-        return "/user/process_registration";
+        return "redirect:login";
     }
 
     /*
@@ -128,10 +128,10 @@ public class AuthenticationController {
             return "/user/login";
         }
 
-        User theUser = userRepository.findByUsername(loginFormDTO.getUsername());
+        User theUser = userRepository.findByName(loginFormDTO.getName());
 
         if (theUser == null) {
-            errors.rejectValue("username", "user.invalid", "The given username does not exist");
+            errors.rejectValue("name", "user.invalid", "The given username does not exist");
             model.addAttribute("title", "Log In");
             return "/user/login";
         }

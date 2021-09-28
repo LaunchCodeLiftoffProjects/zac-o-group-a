@@ -15,11 +15,11 @@ import java.util.HashMap;
 @RequestMapping("search")
 public class SearchController {
 
-        @Autowired
-        private EventRepository eventRepository;
+    @Autowired
+    private EventRepository eventRepository;
 
-        @Autowired
-        private EventCategoryRepository eventCategoryRepository;
+    @Autowired
+    private EventCategoryRepository eventCategoryRepository;
 
     static HashMap<String, String> columnChoices = new HashMap<>();
 
@@ -37,18 +37,19 @@ public class SearchController {
         return "search";
     }
 
-    @PostMapping("results")
-        public String displaySearchResults(Model model, @RequestParam String searchType, @RequestParam String searchTerm){
-            Iterable<Event> events;
-            if (searchTerm.toLowerCase().equals("all") || searchTerm.equals("")){
-                events = eventRepository.findAll();
-            } else {
-                events = EventData.findByColumnAndValue(searchType, searchTerm, eventRepository.findAll());
-            }
-            model.addAttribute("columns", columnChoices);
-            model.addAttribute("title", "Events with " + columnChoices.get(searchType) + ": " + searchTerm);
-            model.addAttribute("events", events);
-            return "search";
+    @PostMapping("/search/results")
+    public String displaySearchResults(Model model, @RequestParam (defaultValue = "all") String searchType,  @RequestParam String searchTerm){
+        Iterable<Event> events;
+        if (searchTerm.toLowerCase().equals("all") || searchTerm.equals("")){
+            events = eventRepository.findAll();
+        } else {
+            events = EventData.findByColumnAndValue(searchType, searchTerm, eventRepository.findAll());
         }
+        model.addAttribute("columns", columnChoices);
+        model.addAttribute("title", "events sorted by " + columnChoices.get(searchType) + ": " + searchTerm);
+        model.addAttribute("title", "Events with " + columnChoices.get(searchType) + ": " + searchTerm);
+        model.addAttribute("events", events);
+        return "search";
+    }
 }
 //TODO fix return mapping.

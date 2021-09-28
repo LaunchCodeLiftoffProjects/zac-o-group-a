@@ -1,32 +1,23 @@
 package org.launchcode.outdoorEvents.models;
 
 import javax.persistence.Entity;
-import javax.validation.constraints.Size;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Entity
 public class EventCategory extends AbstractEntity {
 
+    @ManyToOne
+    @JoinColumn(name="user_id")
+    private User user;
 
-    @Size(min=3, message="Name must be at least 3 characters long")
-    private String title;
-
-    public EventCategory(@Size(min = 3, message = "Name must be at least 3 characters long") String title) {
-        this.title = title;
-    }
+    @ManyToMany(mappedBy = "type")
+    private List<Event> events = new ArrayList<>();
 
     public EventCategory() {}
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    @Override
-    public String toString() {
-        return title;
-    }
 }
-

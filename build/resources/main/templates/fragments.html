@@ -22,14 +22,32 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                    <a class="nav-link dropdown-toggle" id="navbarEventDropdown" role="button"
                        data-bs-toggle="dropdown">Events</a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="/events">Events</a></li>
+                    <ul class="dropdown-menu" aria-labelledby="navbarEventDropdown">
+                        <li><a class="dropdown-item" href="/events">All Events</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="/events/create">Create Event</a></li>
                         <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/events/editSelect">Edit Event</a></li>
+                        <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="/events/delete">Delete Event</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarEventTypeDropdown" role="button"
+                       data-bs-toggle="dropdown">Event Types</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarEventTypeDropdown">
+                        <li><a class="dropdown-item" href="/event-categories">All Event Types</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/event-categories/addType">Create Event Type</a></li>
+                        <li><hr class="dropdown-divider"></li>
+<!--                        <li><a class="dropdown-item" href="/events/editSelect">Edit Event</a></li>-->
+<!--                        <li><hr class="dropdown-divider"></li>-->
+                        <li><a class="dropdown-item" href="/event-categories/deleteType">Delete Event Event</a></li>
+                        <li><hr class="dropdown-divider"></li>
                     </ul>
                 </li>
 
@@ -71,16 +89,11 @@
         <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
             <svg class="bi me-2" width="40" height="32"><img src="/images/logger.jpg"></svg>
         </a>
-
         <ul class="nav col-md-4 justify-content-end">
             <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Home</a></li>
-
             <li class="nav-item"><a href="/events" class="nav-link px-2 text-muted">Events</a></li>
-
             <li class="nav-item"><a href="/user/register" class="nav-link px-2 text-muted">Register</a></li>
-
             <li class="nav-item"><a href="/user/login" class="nav-link px-2 text-muted">Login</a></li>
-
             <li class="nav-item"><a href="/logout" class="nav-link px-2 text-muted">Logout</a></li>
         </ul>
     </footer>

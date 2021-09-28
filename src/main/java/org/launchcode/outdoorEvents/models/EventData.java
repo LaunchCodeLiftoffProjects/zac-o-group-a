@@ -32,7 +32,7 @@ public class EventData {
     public static String getFieldValue(Event event, String fieldName){
         String theValue;
         if (fieldName.equals("name")){
-            theValue = event.getTitle();
+            theValue = event.getName();
         } else if (fieldName.equals("Category")){
             theValue = event.getType().toString();
         } else {
@@ -50,9 +50,9 @@ public class EventData {
 
         for (Event event : allEvents) {
 
-            if (event.getTitle().toLowerCase().contains(lower_val)) {
+            if (event.getName().toLowerCase().contains(lower_val)) {
                 results.add(event);
-            } else if (event.getDescription().toString().toLowerCase().contains(lower_val)) {
+            } else if (event.getDescription().toLowerCase().contains(lower_val)) {
                 results.add(event);
             } else if (event.getType().toString().toLowerCase().contains(lower_val)) {
                 results.add(event);
