@@ -4,6 +4,7 @@ import org.launchcode.outdoorEvents.data.EventCategoryRepository;
 import org.launchcode.outdoorEvents.data.EventRepository;
 import org.launchcode.outdoorEvents.data.UserRepository;
 import org.launchcode.outdoorEvents.models.Event;
+import org.launchcode.outdoorEvents.models.EventCategory;
 import org.launchcode.outdoorEvents.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -65,7 +66,8 @@ public class EventController {
     }
 
     @PostMapping("/events/create")
-    public String processCreateEventForm(@ModelAttribute @Valid Event newEvent, Errors errors, Model model) {
+    public String processCreateEventForm(@ModelAttribute @Valid Event newEvent, List<EventCategory> type, Errors errors,
+                                         Model model) {
           if(errors.hasErrors()) {
               model.addAttribute("title", "Create Event");
              return "events/create";

@@ -1,6 +1,7 @@
 package org.launchcode.outdoorEvents.controllers;
 
 import org.launchcode.outdoorEvents.data.EventRepository;
+import org.launchcode.outdoorEvents.data.LocationRepository;
 import org.launchcode.outdoorEvents.data.UserRepository;
 import org.launchcode.outdoorEvents.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,9 @@ public class HomeController{
 
     @Autowired
     private EventRepository eventRepository;
+
+    @Autowired
+    private LocationRepository locationRepository;
 
     private static final String userSessionKey = "user";
 
@@ -48,6 +52,7 @@ public class HomeController{
         model.addAttribute("firstName", theUser.getFirstName());
         model.addAttribute("lastName", theUser.getLastName());
         model.addAttribute("events", eventRepository.findAll());
+        model.addAttribute("locations", locationRepository.findAll());
         model.addAttribute("title", "Logger");
         return "index";
     }

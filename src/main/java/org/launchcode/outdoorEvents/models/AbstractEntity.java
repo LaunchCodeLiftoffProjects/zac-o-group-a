@@ -15,8 +15,8 @@ public abstract class AbstractEntity {
     @GeneratedValue
     private int id;
 
-    @NotBlank(message = "a name is required")
-    @Size(min = 2, max = 150, message = "Name must be between 2 and 150 characters long")
+    @NotBlank(message = "Please enter a name.")
+    @Size(min = 6, max = 127)
     private String name;
 
     public int getId() {
@@ -32,16 +32,11 @@ public abstract class AbstractEntity {
     }
 
     @Override
-    public String toString() {
-        return name;
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        AbstractEntity that = (AbstractEntity) o;
-        return id == that.id;
+        AbstractEntity entity = (AbstractEntity) o;
+        return id == entity.id;
     }
 
     @Override
