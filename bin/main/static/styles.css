@@ -1,0 +1,19 @@
+/* body {
+  font-size: 14px;
+}
+.error {
+  color: red;
+} */
+
+#map {
+height: 400px;
+width: 600px;
+}
+html, body {
+height: 100%;
+
+}
+/* html, div {
+height: 100%;
+width: 100%;
+} */

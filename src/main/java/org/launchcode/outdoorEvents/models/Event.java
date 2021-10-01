@@ -18,10 +18,10 @@ public class Event extends AbstractEntity {
     private String description;
 
     @NotBlank(message = "Type is required")
-    @ManyToMany
-    private List<EventCategory> type = new ArrayList<>();
+    //@ManyToOne
+    private String type;
 
-    public Event(String description, List<EventCategory> type) {
+    public Event(String description, String type) {
         super();
         this.description = description;
         this.type = type;
@@ -29,15 +29,13 @@ public class Event extends AbstractEntity {
 
     public Event() {}
 
-    public String getDescription() {
-        return description;
-    }
+    public String getDescription() { return description;}
 
     public void setDescription(String description) {this.description = description;}
 
-    public Iterable<EventCategory> getType() {return type;}
+    public String getType() {return type;}
 
-    public void setType(List<EventCategory> type) {this.type = type;}
+    public void setType(String type) {this.type = type;}
 
 
 }

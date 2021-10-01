@@ -26,31 +26,14 @@ public class HomeController{
     @Autowired
     private LocationRepository locationRepository;
 
-    private static final String userSessionKey = "user";
-
-    public User getUserFromSession(HttpSession session) {
-        Integer userId = (Integer) session.getAttribute(userSessionKey);
-        if (userId == null) {
-            return null;
-        }
-
-        Optional<User> user = userRepository.findById(userId);
-
-        if (user.isEmpty()) {
-            return null;
-        }
-
-        return user.get();
-    }
-
+    @Autowired
+    private AuthenticationController authenticationController;
 
     @GetMapping("/")
-    public String index(HttpServletRequest request, Model model){
-
-        User theUser = getUserFromSession(request.getSession());
-
-        model.addAttribute("firstName", theUser.getFirstName());
-        model.addAttribute("lastName", theUser.getLastName());
+    public String displayDashboard(Model model, HttpServletRequest request){
+        User currentUser = authenticationController.getUserFromSession(request.getSession());
+        model.addAttribute("hello", "Hello, "+ currentUser.getFirstName() +" "+ currentUser.getLastName());
+        model.addAttribute("userEvents", currentUser.getEvent());
         model.addAttribute("events", eventRepository.findAll());
         model.addAttribute("locations", locationRepository.findAll());
         model.addAttribute("title", "Logger");
