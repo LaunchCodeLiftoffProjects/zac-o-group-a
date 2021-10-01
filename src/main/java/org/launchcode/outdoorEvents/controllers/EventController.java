@@ -32,25 +32,12 @@ public class EventController {
     @Autowired
     private EventCategoryRepository eventCategoryRepository;
 
-    private static final String userSessionKey = "user";
-
-    public User getUserFromSession(HttpSession session) {
-        Integer userId = (Integer) session.getAttribute(userSessionKey);
-        if (userId == null) {
-            return null;
-        }
-
-        Optional<User> user = userRepository.findById(userId);
-
-        if (user.isEmpty()) {
-            return null;
-        }
-
-        return user.get();
-    }
+    @Autowired
+    private AuthenticationController authenticationController;
 
     @GetMapping("events")
-    public String displayAllEvents(Model model) {
+    public String displayAllEvents(Model model, HttpServletRequest request) {
+            User currentUser = authenticationController.getUserFromSession(request.getSession());
             model.addAttribute("title", "All Events");
             model.addAttribute("events", eventRepository.findAll());
             return "events/index";
@@ -66,14 +53,15 @@ public class EventController {
     }
 
     @PostMapping("/events/create")
-    public String processCreateEventForm(@ModelAttribute @Valid Event newEvent, List<EventCategory> type, Errors errors,
-                                         Model model) {
+    public String processCreateEventForm(@ModelAttribute @Valid Event newEvent, @ModelAttribute @Valid String type,
+                                             Errors errors, Model model, HttpServletRequest request) {
           if(errors.hasErrors()) {
               model.addAttribute("title", "Create Event");
              return "events/create";
           }
-
-
+          newEvent.setType(type);
+          User currentUser = authenticationController.getUserFromSession(request.getSession());
+          currentUser.setEvent(newEvent);
           eventRepository.save(newEvent);
           return "redirect:";
     }
