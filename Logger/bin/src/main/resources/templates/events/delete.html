@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container-fluid">
+
+<header th:replace="fragments :: header"></header>
+
+<div class="m-3">
+    <table class="table table-striped-green table-hover">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Type</th>
+        </tr>
+        </thead>
+        <tr th:each="event : ${events}">
+            <td th:text="${event.name}"></td>
+            <td th:text="${event.description}"></td>
+            <td th:text="${event.type[0]}"></td>
+        </tr>
+    </table>
+
+    <form method="post" style="max-width: 600px; margin: 0 auto" autocomplete="off">
+      <th:block th:each="event : ${events}">
+          <div class="form-group row">
+              <label>
+                <span th:text="${event.name}"></span>
+                <input type="checkbox" name="eventIds" th:value="${event.id}" class="form-check-input">
+              </label>
+          </div>
+      </th:block>
+
+        <div class="form_group button">
+            <div class="col-6"><br><br>
+                <button type="submit" class="btn btn-danger" value="deleteEvent"/>Delete</button/>
+            </div>
+        </div>
+    </form>
+</div>
+
+<footer th:replace="fragments :: footer"></footer>
+
+</body>
+</html>
