@@ -5,11 +5,9 @@ import org.launchcode.outdoorEvents.data.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.*;
 
 
 @Entity
@@ -29,13 +27,12 @@ public class User extends AbstractEntity{
     private String email;
 
 
-    @OneToMany
-    @JoinColumn(name="user_id")
-    private List<Event> events = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name="event_id")
+    private Event event;
 
-    @OneToMany
-    @JoinColumn(name="location_id")
-    private List<Location> locations = new ArrayList<>();
+    // @OneToMany(mappedBy="user")
+    // private List<Location> locations = new ArrayList<>();
 
     public User(){};
 
@@ -48,17 +45,13 @@ public class User extends AbstractEntity{
     }
 
 
-    public Iterable<Event> getEvents() {
-        return events;
-    }
+    public Event getEvent() { return event; }
 
-    public void setEvents(List<Event> events) {
-        this.events = events;
-    }
+    public void setEvent(Event event) { this.event = event;}
 
-    public List<Location> getLocations() {return locations;}
+    // public List<Location> getLocations() {return locations;}
 
-    public void setLocations(List<Location> locations) {this.locations = locations;}
+    // public void setLocations(List<Location> locations) {this.locations = locations;}
 
     public String getFirstName() {return firstName;}
 
